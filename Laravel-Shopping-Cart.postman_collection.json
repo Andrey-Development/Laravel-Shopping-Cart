@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "3abe0be6-e645-4131-a08d-e6ff655e8c3e",
+		"name": "Laravel Car Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16330250"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base_v1}}/products/",
+									"host": [
+										"{{url_base_v1}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base_v1",
+			"value": "http://localhost:8000/api/v1",
+			"type": "string"
+		}
+	]
+}
