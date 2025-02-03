@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -58,7 +59,19 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        try {
+            $product = Product::findOrFail($id);
+
+            return response(
+                'Api v1 success!',
+                200,
+            )->setContent( $product->toJson() );
+        } catch (\Exception $e) {
+            return response(
+                'Ocorreu um erro inesperado!',
+                500,
+            );
+        }
     }
 
     /**
